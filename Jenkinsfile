@@ -2,10 +2,15 @@ pipeline {
     agent any
 
     stages {
+        stage("Github Setup"){
+            steps {
+            git credentialsId: 'github', url: 'https://github.com/arslan578/jenkins_app.git'
+            }
+        }
         stage("A"){
 
             steps{
-                git credentialsId: 'github', url: 'https://github.com/arslan578/jenkins_app.git'
+       
                 echo "====++++executing A++++===="
             }
             post{
